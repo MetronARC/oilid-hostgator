@@ -66,7 +66,7 @@ class Contact extends Controller
         // Email configuration for cPanel
         $emailConfig = [
             'protocol' => 'smtp',
-            'SMTPHost' => 'mail.oilid.com',
+            'SMTPHost' => 'oilid.com',
             'SMTPUser' => 'no-reply@oilid.com',
             'SMTPPass' => '2468g0a7A7B7*',
             'SMTPPort' => 465,

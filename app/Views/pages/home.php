@@ -339,12 +339,10 @@
 
 <script>
 $(document).ready(function() {
-    // Get the base URL from CodeIgniter
-    const baseUrl = '<?= base_url() ?>';
 
     // Function to generate new CAPTCHA
     function generateCaptcha() {
-        $.get(baseUrl + '/contact/generate', function(data) {
+        $.get('contact/generate', function(data) {
             if(data && data.status === 'success') {
                 $('#captcha-display').text(data.captcha);
                 console.log('Generated CAPTCHA:', data.captcha); // Debug log
@@ -372,7 +370,7 @@ $(document).ready(function() {
 
         // First validate CAPTCHA
         $.ajax({
-            url: baseUrl + '/contact/validate',
+            url: 'contact/validate',
             type: 'POST',
             data: {
                 captcha: captchaValue
@@ -430,7 +428,7 @@ $(document).ready(function() {
 
         // Send form data
         $.ajax({
-            url: baseUrl + '/contact/sendEmail',
+            url: 'contact/sendEmail',
             type: 'POST',
             data: formData,
             success: function(response) {
